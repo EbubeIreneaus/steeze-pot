@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
- import Swiper from 'swiper'
+//  import Swiper from 'swiper'
 // import 'swiper/css';
 const categories = [
   { id: 0, title: "Starter", value: "starter", src: "starter.jpg" },

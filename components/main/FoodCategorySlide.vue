@@ -79,11 +79,7 @@ const breakpoints = {
 //   },
 
 // });
-
-onMounted(() => {
- 
-  alert('welcome dear ....')
-  console.log('welcome dear ....')
+if(import.meta.browser){
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     slidesPerView: 3,
@@ -91,6 +87,13 @@ onMounted(() => {
     breakpoints: breakpoints,
     enabled: true
   })
+}
+
+onMounted(() => {
+ 
+  alert('welcome dear ....')
+  console.log('welcome dear ....')
+ 
 })
 </script>
 

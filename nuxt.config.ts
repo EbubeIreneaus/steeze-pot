@@ -13,6 +13,14 @@ export default defineNuxtConfig({
     '@prisma/nuxt'
   ],
 
+  vite: {
+    resolve: {
+      alias: {
+        '.prisma/client/index-browser': './node_modules/.prisma/client/index-browser.js',
+      },
+    },
+  },
+
   runtimeConfig: {
     jwt_secret: process.env.JWT_SECRET
   },

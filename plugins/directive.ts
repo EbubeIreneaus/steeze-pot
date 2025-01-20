@@ -9,11 +9,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   if (import.meta.server) {
     nuxtApp.vueApp.directive("naira", {
       mounted(el, binding) {
-        el.innerText = "NGN" + el.innerText;
-      },
-      updated(el, binding) {
-        el.innerText = "NGN" + el.innerText;
-      },
+        el.innerText = binding.value;
+      }
     });
   } else {
     nuxtApp.vueApp.directive("naira", {

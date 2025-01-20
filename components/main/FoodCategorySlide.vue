@@ -6,7 +6,7 @@
       >
         <div class="swiper-slide" v-for="cat in categories" :key="cat.id">
           <div class="w-fit">
-            <NuxtImg
+            <nuxt-img
               :src="`/img/category/${cat.src}`"
               width="90"
               height="90"

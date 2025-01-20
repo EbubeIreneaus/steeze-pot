@@ -68,7 +68,7 @@
         class="container flex justify-between items-center mx-auto lg:!py-4 p-4"
       >
         <div class="">
-          <NuxtImg
+          <nuxt-img
             src="/logo.jpg"
             width="60"
             height="60"

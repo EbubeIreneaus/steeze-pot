@@ -2,7 +2,7 @@
   <aside class="fixed top-0 z-40 h-dvh aside-close bg-secondary overflow-y-auto overflow-x-hidden" :class="open?'aside-open': 'aside-close'">
     <div class="my-12 mx-5">
       <div class="w-28">
-        <NuxtImg
+        <nuxt-img
           src="/logo.jpg"
           width="60px"
           height="60px"

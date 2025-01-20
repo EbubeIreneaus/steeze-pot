@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "pinia-plugin-persistedstate/nuxt",
     "@nuxt/image",
-    
+    '@prisma/nuxt'
   ],
 
   runtimeConfig: {

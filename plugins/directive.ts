@@ -6,6 +6,9 @@ function toNaira(val: number) {
     }).format(val)
 }
 export default defineNuxtPlugin((nuxtApp) => {
+    if (import.meta.server) {
+        return 
+    }
     nuxtApp.vueApp.directive("naira", {
         mounted (el, binding){
             el.innerText = toNaira(binding.value)

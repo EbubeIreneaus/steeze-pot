@@ -10,7 +10,7 @@
         </h2>
 
         <div>
-          <!-- <q-btn
+          <q-btn
             icon="fa fa-angle-left"
             unelevated
             dense
@@ -21,7 +21,7 @@
             unelevated
             dense
             :id="uniqueId + '-swiper-next'"
-          /> -->
+          />
         </div>
       </div>
 
@@ -32,43 +32,50 @@
         </div>
       </div> -->
 
-      <!-- <ClientOnly>
-          <swiper-container :init="false" ref="swipe_container_id" class="px-5">
-            <swiper-slide v-for="x in 10" :key="x">
+     <div class="px-5">
+      <div class="swiper" :id="uniqueId">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="x in 10" :key="x">
               <MainProductCard />
-            </swiper-slide>
-          </swiper-container>
-      </ClientOnly> -->
+          </div>
+        </div>
+      </div>
+     </div>
     </div>
-  </section> 
+  </section>
 </template>
 
 <script setup lang="ts">
-const uniqueId = '011';
+import Swiper from "swiper";
+import { Navigation } from "swiper/modules";
+import 'swiper/css'
+
+
+const uniqueId = useId();
 
 defineProps<{ header: string }>();
 
-  // const swiper = useSwiper(swipe_container_id, {
-  //   slidesPerView: 1,
-  //   spaceBetween: 15,
+// const swiper = useSwiper(swipe_container_id, {
+//   slidesPerView: 1,
+//   spaceBetween: 15,
 
-  //   breakpoints: {
-  //     420: {
-  //       slidesPerView: 2,
-  //       spaceBetween: 8,
-  //     },
-  //     768: {
-  //       slidesPerView: 3,
-  //     },
-  //     1020: {
-  //       slidesPerView: 4,
-  //     },
-  //   },
-  //   navigation: {
-  //     nextEl: `#${uniqueId}-swiper-next`,
-  //     prevEl: `#${uniqueId}-swiper-prev`,
-  //   },
-  // });
+//   breakpoints: {
+//     420: {
+//       slidesPerView: 2,
+//       spaceBetween: 8,
+//     },
+//     768: {
+//       slidesPerView: 3,
+//     },
+//     1020: {
+//       slidesPerView: 4,
+//     },
+//   },
+//   navigation: {
+//     nextEl: `#${uniqueId}-swiper-next`,
+//     prevEl: `#${uniqueId}-swiper-prev`,
+//   },
+// });
 // onMounted(() => {
 //   const swiper = new Swiper(swipeContainer, {
 //   slidesPerView: 3,
@@ -103,6 +110,34 @@ defineProps<{ header: string }>();
 //   },
 // });
 // })
+
+onMounted(() => {
+  console.log(uniqueId);
+  
+  const swiper = new Swiper(`#${uniqueId}`, {
+    slidesPerView: 1,
+    spaceBetween: 15,
+    enabled: true,
+    direction: 'horizontal',
+    modules: [Navigation],
+    breakpoints: {
+      420: {
+        slidesPerView: 2,
+        spaceBetween: 8,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1020: {
+        slidesPerView: 4,
+      },
+    },
+    navigation: {
+      nextEl: `#${uniqueId}-swiper-next`,
+      prevEl: `#${uniqueId}-swiper-prev`,
+    },
+  });
+});
 </script>
 
 <style scoped></style>

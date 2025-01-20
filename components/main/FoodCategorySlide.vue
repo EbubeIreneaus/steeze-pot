@@ -89,12 +89,7 @@ if(import.meta.browser){
   })
 }
 
-onMounted(() => {
- 
-  alert('welcome dear ....')
-  console.log('welcome dear ....')
- 
-})
+
 </script>
 
 <style scoped></style>

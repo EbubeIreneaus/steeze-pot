@@ -1,15 +1,16 @@
 <template>
   <main>
     <MainFoodCategorySlide />
-    <!-- <MainProductListSection
+    <MainProductListSection
       :header="cat.title"
       v-for="cat in categories"
       :key="cat.id"
-    /> -->
+    />
   </main> 
 </template>
 
 <script setup lang="ts">
+
 const categories = [
   { id: 0, title: "Starter", value: "starter", src: "starter.jpg" },
   { id: 1, title: "Rice", value: "rice", src: "rice.jpg" },
@@ -27,12 +28,6 @@ const categories = [
   { id: 13, title: "Sides", value: "sides", src: "sides.jpeg" },
 ];
 
-onBeforeMount(() => {
-  console.log('created')
-})
-onMounted(() => {
-  console.log('mounted')
-})
 
 </script>
 

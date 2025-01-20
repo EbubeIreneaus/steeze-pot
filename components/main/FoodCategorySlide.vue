@@ -26,8 +26,8 @@
 </template>
 
 <script setup lang="ts">
-//  import Swiper from 'swiper'
-// import 'swiper/css';
+ import Swiper from 'swiper'
+import 'swiper/css';
 const categories = [
   { id: 0, title: "Starter", value: "starter", src: "starter.jpg" },
   { id: 1, title: "Rice", value: "rice", src: "rice.jpg" },
@@ -84,13 +84,13 @@ onMounted(() => {
  
   alert('welcome dear ....')
   console.log('welcome dear ....')
-  // const swiper = new Swiper('.swiper', {
-  //   direction: 'horizontal',
-  //   slidesPerView: 3,
-  //   spaceBetween: 10,
-  //   breakpoints: breakpoints,
-  //   enabled: true
-  // })
+  const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    slidesPerView: 3,
+    spaceBetween: 10,
+    breakpoints: breakpoints,
+    enabled: true
+  })
 })
 </script>
 

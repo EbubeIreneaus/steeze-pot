@@ -10,7 +10,7 @@
         </h2>
 
         <div>
-          <q-btn
+          <!-- <q-btn
             icon="fa fa-angle-left"
             unelevated
             dense
@@ -21,7 +21,7 @@
             unelevated
             dense
             :id="uniqueId + '-swiper-next'"
-          />
+          /> -->
         </div>
       </div>
 

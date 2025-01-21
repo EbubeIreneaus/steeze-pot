@@ -21,7 +21,7 @@ export default defineEventHandler(async event => {
                 id: body.data.productId
             }
         })
-        return {statusCode: 200}
+        return {statusCode: 200, productId: body.data.productId}
     } catch (error: any) {
         return createError(error.message)
     }

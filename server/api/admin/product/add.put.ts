@@ -24,12 +24,15 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-   const products = await prisma.product.createMany({
-        data: body.data
-    })
+    const products = await prisma.product.createManyAndReturn({
+      data: body.data,
+      omit:{
+        imageAlt: true
+      }
+    });
 
-    return {statusCode: 201, data: products}
+    return { statusCode: 201, data: products };
   } catch (error: any) {
-    return createError(error.message)
+    return createError(error.message);
   }
 });

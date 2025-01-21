@@ -60,7 +60,7 @@ export default defineEventHandler(async (event) => {
       },
     });
 
-    return {statusCode: 201, data: res}
+    return {statusCode: 201, data: {productId: res.id, filename: res.image}}
   } catch (error: any) {
     return createError(error.message)
   }

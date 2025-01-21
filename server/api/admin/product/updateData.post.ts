@@ -8,7 +8,7 @@ const schema = z.object({
   price: z.coerce.number(),
   category: z.string(),
   desc: z.coerce.string(),
-  available: z.boolean()
+  available: z.boolean(),
 });
 
 export default defineEventHandler(async (event) => {
@@ -30,6 +30,10 @@ export default defineEventHandler(async (event) => {
         id: body.data.id,
       },
       data: body.data,
+
+      omit: {
+        imageAlt: true,
+      },
     });
 
     return { statusCode: 200, data: product };

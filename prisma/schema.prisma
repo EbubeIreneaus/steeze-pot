@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider   = "prisma-client-js"
   engineType = "data-proxy"
 }
 
@@ -11,22 +11,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  src      String
+  alt      String?
+  products Product[]
+}
+
 model Product {
-  id        Int     @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   name      String
   desc      String?
   price     Decimal
   image     String?
   imageAlt  String?
-  available Boolean @default(false)
+  available Boolean  @default(false)
   category  String
+  group     Category @relation(fields: [category], references: [name])
 }
 
 model User {
   id        Int       @id @default(autoincrement())
   firstname String
   lastname  String
-  email     String @unique
+  email     String    @unique
   phone     String
   psw       String
   createdAt DateTime  @default(now())

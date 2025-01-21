@@ -35,8 +35,8 @@
      <div class="px-5">
       <div class="swiper" :id="uniqueId">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="x in 10" :key="x">
-              <MainProductCard />
+            <div class="swiper-slide" v-for="product in Products" :key="product.id">
+              <MainProductCard :Product="product" />
           </div>
         </div>
       </div>
@@ -49,70 +49,14 @@
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 import 'swiper/css'
+import type { TypesProduct } from "~/types/_Product";
 
 
 const uniqueId = useId();
 
-defineProps<{ header: string }>();
-
-// const swiper = useSwiper(swipe_container_id, {
-//   slidesPerView: 1,
-//   spaceBetween: 15,
-
-//   breakpoints: {
-//     420: {
-//       slidesPerView: 2,
-//       spaceBetween: 8,
-//     },
-//     768: {
-//       slidesPerView: 3,
-//     },
-//     1020: {
-//       slidesPerView: 4,
-//     },
-//   },
-//   navigation: {
-//     nextEl: `#${uniqueId}-swiper-next`,
-//     prevEl: `#${uniqueId}-swiper-prev`,
-//   },
-// });
-// onMounted(() => {
-//   const swiper = new Swiper(swipeContainer, {
-//   slidesPerView: 3,
-//   spaceBetween: 10,
-//   pagination: {
-//     el: ".pagination",
-//     clickable: true,
-//     enabled: true,
-//     bulletActiveClass: "text-red-500",
-//   },
-//   breakpoints: {
-//     360: {
-//       slidesPerView: 4,
-//     },
-
-//     640: {
-//       slidesPerView: 5,
-//     },
-
-//     720: {
-//       slidesPerView: 6,
-//     },
-//     992: {
-//       slidesPerView: 7,
-//     },
-//     1020: {
-//       slidesPerView: 8,
-//     },
-//     1200: {
-//       slidesPerView: 10,
-//     },
-//   },
-// });
-// })
+defineProps<{ header: string, Products: TypesProduct[] }>();
 
 onMounted(() => {
-  console.log(uniqueId);
   
   const swiper = new Swiper(`#${uniqueId}`, {
     slidesPerView: 1,

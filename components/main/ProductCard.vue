@@ -3,11 +3,22 @@
     <section>
       <div class="top-image">
         <div class="image-wrapper">
-          <nuxt-img src="/img/category/porridge.jpeg" class="image w-full" />
+          <nuxt-img
+            :src="'/img/category/' + Product.image"
+            :alt="Product.imageAlt || Product.name"
+            format="webp"
+            densities="x1 "
+            sizes="200px sm:250px md:300px lg:350px xl:400px"
+            loading="lazy"
+            
+            class="image w-full"
+          />
 
-          <div class="absolute bottom-0 text-base left-2 px-3 py-1 bg-secondary z-30 rounded-t-lg">
-            <span v-naira="10000"></span>
-        </div>
+          <div
+            class="absolute bottom-0 text-base left-2 px-3 py-1 bg-secondary z-30 rounded-t-lg"
+          >
+            <span v-naira="Product.price"></span>
+          </div>
         </div>
       </div>
     </section>
@@ -17,18 +28,27 @@
         class="line-clamp-2 text-ellipsis px-1 text-subtitle1 font-semibold p-2.5"
       >
         <nuxt-link to="/" class="hover:text-slate-500">
-          Beef Tenderloin</nuxt-link
+          {{ Product.name }}</nuxt-link
         >
       </h3>
-      <p class=" px-2 line-clamp-3 text-ellipsis">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, mollitia?</p>
-      <div class=" mt-1.5">
+      <p class="px-2 line-clamp-3 text-ellipsis">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, mollitia?
+      </p>
+      <div class="mt-1.5">
         <div class="flex justify-between items-center gap-x-3">
           <div class="flex items-center gap-2 text-green-14">
             <q-icon name="star" class="ms-2 block" />
             <span>3</span>
           </div>
           <div class="flex-grow">
-            <q-btn unelevated icon="shopping_cart" label="add to cart" no-caps  class="w-full rounded-br-[10px]" color="primary" />
+            <q-btn
+              unelevated
+              icon="shopping_cart"
+              label="add to cart"
+              no-caps
+              class="w-full rounded-br-[10px]"
+              color="primary"
+            />
           </div>
         </div>
       </div>
@@ -36,12 +56,16 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { TypesProduct } from "~/types/_Product";
+
+defineProps<{ Product: TypesProduct }>();
+const Cart = useCartStore();
+</script>
 
 <style scoped lang="scss">
 .product-card {
   border-radius: 10px;
- 
 }
 
 .top-image {

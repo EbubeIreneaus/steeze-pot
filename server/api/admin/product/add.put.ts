@@ -5,7 +5,7 @@ import { PrismaClient } from "@prisma/client";
 const singleSchema = z.object({
   name: z.coerce.string(),
   price: z.coerce.number(),
-  category: z.string(),
+  category: z.string().toLowerCase().trim(),
   desc: z.coerce.string(),
 });
 const schema = z.array(singleSchema);

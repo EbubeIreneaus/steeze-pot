@@ -2,15 +2,15 @@
   <main>
     <MainFoodCategorySlide />
     <MainProductListSection
-      :header="cat.title"
-      v-for="cat in categories"
-      :key="cat.id"
+      :header="category.name"
+      :Products="category.products"
+      v-for="category in data?.categories"
+      :key="category.id"
     />
-  </main> 
+  </main>
 </template>
 
 <script setup lang="ts">
-
 const categories = [
   { id: 0, title: "Starter", value: "starter", src: "starter.jpg" },
   { id: 1, title: "Rice", value: "rice", src: "rice.jpg" },
@@ -28,7 +28,21 @@ const categories = [
   { id: 13, title: "Sides", value: "sides", src: "sides.jpeg" },
 ];
 
+type TypesData = {
+  categories: {
+    name: string;
+    id: number;
+    src: string;
+    alt: string;
+    products: [];
+  }[];
+};
 
+const { data, error, status } = useFetch<TypesData>("/api/main/product/all", {
+  watch: false,
+});
+
+onMounted(() => {console.log(data.value?.categories)});
 </script>
 
 <style scoped></style>

@@ -38,11 +38,7 @@ type TypesData = {
   }[];
 };
 
-const { data, error, status } = useFetch<TypesData>("/api/main/product/all", {
-  watch: false,
-});
-
-onMounted(() => {console.log(data.value?.categories)});
+const { data, error, status } = useFetch<TypesData>("/api/main/product/all");
 </script>
 
 <style scoped></style>

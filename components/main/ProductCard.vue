@@ -4,13 +4,16 @@
       <div class="top-image">
         <div class="image-wrapper">
           <nuxt-img
-            :src="'/img/category/' + Product.image"
+            :src="
+              Product.image
+                ? `/img/products/${Product.image}`
+                : '/img/products/placeholder.png'
+            "
             :alt="Product.imageAlt || Product.name"
             format="webp"
-            densities="x1 "
+            densities="x1"
             sizes="200px sm:250px md:300px lg:350px xl:400px"
             loading="lazy"
-            
             class="image w-full"
           />
 
@@ -19,6 +22,15 @@
           >
             <span v-naira="Product.price"></span>
           </div>
+          <q-btn
+            icon="favorite"
+            size="md"
+            dense
+            flat
+            :color="Fav.Favorites.has(Product.id) ? 'red-13' : 'secondary'"
+            @click="Fav.addItem(Product.id)"
+            class="absolute top-0 right-0 z-40"
+          />
         </div>
       </div>
     </section>
@@ -48,6 +60,7 @@
               no-caps
               class="w-full rounded-br-[10px]"
               color="primary"
+              @click="Cart.addItem(Product)"
             />
           </div>
         </div>
@@ -60,7 +73,10 @@
 import type { TypesProduct } from "~/types/_Product";
 
 defineProps<{ Product: TypesProduct }>();
+const pinia = usePinia();
 const Cart = useCartStore();
+const Fav = useFavStore();
+
 </script>
 
 <style scoped lang="scss">

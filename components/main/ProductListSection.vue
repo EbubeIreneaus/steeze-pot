@@ -1,7 +1,7 @@
 <template>
   <section class="mb-10">
     <div class="">
-      <div class="flex justify-between px-2 py-5">
+      <div class="flex justify-between px-2 py-5" :id="header.toLowerCase()">
         <h2
           role="heading"
           class="text-3xl font-extrabold uppercase bg-gradient-to-r from-primary to-slate-500 bg-clip-text text-transparent"

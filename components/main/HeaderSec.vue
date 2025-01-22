@@ -2,7 +2,7 @@
   <header class="bg-primary text-white">
     <div class="bg-secondary">
       <div
-        class="flex justify-end md:justify-between max-w-[90%] mx-auto py-3 text-black"
+        class="flex justify-end md:justify-between items-center max-w-[90%] mx-auto py-3 text-black"
       >
         <div class="hidden md:!flex justify-between gap-5">
           <div>service@steezepot.com.ng</div>
@@ -12,7 +12,7 @@
           </div>
         </div>
 
-        <div class="flex justify-end lg:!justify-between gap-5">
+        <div class="flex justify-end lg:!justify-between items-center gap-5">
           <ul class="hidden lg:!flex gap-4">
             <a href="">
               <li><q-icon name="fa-brands fa-facebook" /></li>
@@ -28,7 +28,7 @@
             </a>
           </ul>
           <!-- <q-separator vertical /> -->
-          <div v-if="true">
+          <div v-if="!user">
             <router-link to="/auth/login">
               <q-icon name="account_circle" /> &nbsp;
               <span>Login</span>
@@ -36,11 +36,13 @@
           </div>
           <div v-else>
             <q-btn-dropdown
-              size="md"
               icon="account_circle"
-              label="Okigwe"
+              :label="user?.firstname"
               flat
               dense
+              class="capitalize"
+            dropdown-icon=""
+              no-caps
             >
               <q-list>
                 <q-item to="/">
@@ -105,7 +107,7 @@
             color="secondary"
             to="/favorite"
           >
-            <q-badge label="9" class="" floating rounded></q-badge>
+            <q-badge :label="Favorites.size" class="" floating rounded></q-badge>
           </q-btn>
 
           <q-btn
@@ -117,13 +119,13 @@
             class=" focus:!bg-transparent"
             to="/cart"
           >
-            <q-badge label="8" floating  rounded></q-badge>
+            <q-badge :label="Cart.CartItems.length" floating  rounded></q-badge>
           </q-btn>
 
           &nbsp;&nbsp;
           <div>
             Cart:
-            <span v-naira="1000" class="text-weight-bold"></span>
+            <span v-naira="Cart.CartTotalPrice" class="text-weight-bold"></span>
           </div>
         </div>
 
@@ -143,7 +145,7 @@
         color="secondary"
         to="/favorite"
       >
-        <q-badge label="9+" floating rounded></q-badge>
+        <q-badge :label="Favorites.size" floating rounded></q-badge>
       </q-btn>
 
       <q-btn
@@ -155,13 +157,13 @@
         color="secondary"
         to="/cart"
       >
-        <q-badge label="9" floating rounded></q-badge>
+        <q-badge :label="Cart.CartItems.length" floating rounded></q-badge>
       </q-btn>
 
       &nbsp;&nbsp;
       <div>
         Cart:
-        <span v-naira="1000" class="text-weight-bold"></span>
+        <span v-naira="Cart.CartTotalPrice" class="text-weight-bold"></span>
       </div>
     </div>
 
@@ -182,7 +184,12 @@ const MenuLinks = [
   { title: 'BOOK APPOINTMENT', href: '/appointment', icon: '', sublink: [] },
   { title: 'CONTACT', href: '/contact', icon: '', sublink: [] },
 ];
-
+const Cart = useCartStore()
+const {user} = useAppStore()
+const {Favorites} = useFavStore()
+onMounted(() => {
+  console.log(Cart.CartTotalPrice)
+})
 </script>
 
 <style scoped></style>

@@ -1,24 +1,25 @@
 <template>
   <div class="lg:px-10 px-5 ">
-    <div class="swiper">
+    <div class="swiper category-swiper">
       <div
       class="swiper-wrapper"
       >
-        <div class="swiper-slide" v-for="cat in categories" :key="cat.id">
-          <div class="w-fit">
+        <nuxt-link :to="`#${cat.value.toLowerCase()}`" class="swiper-slide" v-for="cat in categories" :key="cat.id">
+          <figure class="w-fit">
             <nuxt-img
               :src="`/img/category/${cat.src}`"
               width="90"
               height="90"
               format="webp"
               fit="cover"
+              densties="x1"
               class="rounded-full w-[90px] h-[80px]"
             />
-            <p class="text-caption font-semibold text-center">
+            <figcaption class="text-caption font-semibold text-center">
               {{ cat.title }}
-            </p>
-          </div>
-        </div>
+            </figcaption>
+          </figure>
+        </nuxt-link>
       </div>
     </div>
     <div class="pagination text-center mt-3"></div>
@@ -79,17 +80,17 @@ const breakpoints = {
 //   },
 
 // });
-if(import.meta.browser){
-  const swiper = new Swiper('.swiper', {
+
+
+onMounted(() => {
+  const swiper = new Swiper('.category-swiper', {
     direction: 'horizontal',
     slidesPerView: 3,
     spaceBetween: 10,
     breakpoints: breakpoints,
     enabled: true
   })
-}
-
-
+})
 </script>
 
 <style scoped></style>

@@ -1,3 +1,7 @@
 .bulactive {
     background-color: red !important;
 }
+
+html{
+    scroll-behavior: smooth !important;
+}

@@ -37,7 +37,7 @@
           <q-icon name="phone" />
         </div>
         <div>
-          <h5 class="text-weight-bold">+234 806 198 2520</h5>
+          <h5 class="text-weight-bold">+234 810 440 3050</h5>
           <div>24/7 customer support</div>
         </div>
       </div>

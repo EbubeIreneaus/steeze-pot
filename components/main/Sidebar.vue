@@ -23,7 +23,7 @@
             class="!text-black focus:!bg-transparent"
             to="/favorite"
           >
-            <q-badge label="9"  floating rounded></q-badge>
+            <q-badge :label="Favorites.size"  floating rounded></q-badge>
           </q-btn>
 
           <q-btn
@@ -34,13 +34,13 @@
             class="!text-black focus:!bg-transparent"
             to="/cart"
           >
-            <q-badge label="9" floating class="" rounded></q-badge>
+            <q-badge :label="Cart.CartItems.length" floating class="" rounded></q-badge>
           </q-btn>
 
           &nbsp;&nbsp;
           <div>
             Cart:
-            <span v-naira="1000" class="text-weight-bold"></span>
+            <span v-naira="Cart.CartTotalPrice" class="text-weight-bold"></span>
           </div>
         </div>
       </div>
@@ -69,9 +69,9 @@
 
       <div class="px-3 font-medium text-gray-500/ mb-4">
         <div class="mb-3">
-          <q-icon name="mail" />&nbsp; care@ireneausfs.com.ng
+          <q-icon name="mail" />&nbsp; service@steeze-pot.com.ng
         </div>
-        <div><q-icon name="phone" />&nbsp; +234 806 198 2520</div>
+        <div><q-icon name="phone" />&nbsp; +234 810 440 3050</div>
       </div>
 
       <div>Free shipping for goods above <span v-naira="25000"></span></div>
@@ -81,6 +81,8 @@
 
 <script setup lang="ts">
 defineProps<{ menu: any[], open: boolean }>();
+const Cart = useCartStore()
+const {Favorites} = useFavStore()
 </script>
 
 <style scoped>

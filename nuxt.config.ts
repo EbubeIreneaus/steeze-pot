@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  ssr: true,
   modules: [
     "@nuxtjs/tailwindcss",
     "nuxt-quasar-ui",
@@ -12,7 +11,11 @@ export default defineNuxtConfig({
     "@nuxt/image",
     '@prisma/nuxt'
   ],
-
+  app: {
+    pageTransition: {name: 'page', mode: 'out-in'},
+    layoutTransition: {name: 'layout', mode: 'out-in'}
+  },
+  css: ['~/assets/css/style.css'],
   vite: {
     resolve: {
       alias: {

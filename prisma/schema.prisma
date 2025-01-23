@@ -20,27 +20,29 @@ model Category {
 }
 
 model Product {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   name      String
   desc      String?
   price     Decimal
   image     String?
   imageAlt  String?
-  available Boolean  @default(false)
+  available Boolean   @default(false)
   category  String
-  group     Category @relation(fields: [category], references: [name])
+  group     Category  @relation(fields: [category], references: [name])
+  favorite  Favorite?
 }
 
 model User {
-  id        Int       @id @default(autoincrement())
+  id        Int        @id @default(autoincrement())
   firstname String
   lastname  String
-  email     String    @unique
+  email     String     @unique
   phone     String
   psw       String
-  createdAt DateTime  @default(now())
+  createdAt DateTime   @default(now())
   address   Address[]
-  admin     Boolean   @default(false)
+  admin     Boolean    @default(false)
+  favorite  Favorite[]
 }
 
 model Address {
@@ -52,4 +54,14 @@ model Address {
   bustop  String
   street  String
   address String
+}
+
+model Favorite {
+  id        Int     @id @default(autoincrement())
+  productId Int     @unique
+  userId    Int
+  product   Product @relation(fields: [productId], references: [id])
+  user      User    @relation(fields: [userId], references: [id])
+
+  @@unique([productId, userId])
 }

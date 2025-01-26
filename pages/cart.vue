@@ -84,6 +84,10 @@
               </div>
             </div>
           </div>
+
+          <div class="flex justify-end">
+            <q-btn label="proceed to checkout" color="primary" to="/checkout" unelevated class="btn mt-7" />
+          </div>
         </div>
 
         <div v-else>

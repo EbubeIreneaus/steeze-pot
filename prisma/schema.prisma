@@ -40,20 +40,22 @@ model User {
   phone     String
   psw       String
   createdAt DateTime   @default(now())
-  address   Address[]
+  address   Address?
   admin     Boolean    @default(false)
   favorite  Favorite[]
+  order     Order[]
 }
 
 model Address {
-  id      Int    @id @default(autoincrement())
-  userId  Int
-  user    User   @relation(fields: [userId], references: [id])
+  id      Int     @id @default(autoincrement())
+  userId  Int?    @unique
+  user    User?   @relation(fields: [userId], references: [id])
   state   String
   area    String
   bustop  String
   street  String
   address String
+  Order   Order[]
 }
 
 model Favorite {
@@ -64,4 +66,32 @@ model Favorite {
   user      User    @relation(fields: [userId], references: [id])
 
   @@unique([productId, userId])
+}
+
+model Appointment {
+  id       Int    @id @default(autoincrement())
+  type     String
+  fullname String
+  email    String
+  phone    String
+  date     String
+  time     String
+  state    String
+  area     String
+  bustop   String
+  address  String
+}
+
+model Order {
+  id              Int       @id @default(autoincrement())
+  userId          Int
+  user            User      @relation(fields: [userId], references: [id])
+  products        Json[]
+  totalAmount     Decimal
+  createdAt       DateTime  @default(now())
+  paid            Boolean   @default(false)
+  delivered       Boolean   @default(false)
+  deliveredAt     DateTime?
+  deliveryAddress Address   @relation(fields: [addressId], references: [id])
+  addressId       Int
 }

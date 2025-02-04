@@ -179,7 +179,7 @@ const openAside = ref(false)
 const MenuLinks = [
   { title: 'HOME', href: '/', icon: '', sublink: [] },
   { title: 'ABOUT US', href: '/about', icon: '', sublink: [] },
-  { title: 'OUR SERVICE', href: '/about', icon: '', sublink: [] },
+  // { title: 'OUR SERVICE', href: '/about', icon: '', sublink: [] },
   { title: 'BLOG', href: '/blog', icon: '', sublink: [] },
   { title: 'BOOK APPOINTMENT', href: '/appointment', icon: '', sublink: [] },
   { title: 'CONTACT', href: '/contact', icon: '', sublink: [] },

@@ -9,23 +9,25 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "pinia-plugin-persistedstate/nuxt",
     "@nuxt/image",
-    '@prisma/nuxt'
+    "@prisma/nuxt",
   ],
   app: {
-    pageTransition: {name: 'page', mode: 'out-in'},
-    layoutTransition: {name: 'layout', mode: 'out-in'}
+    pageTransition: { name: "page", mode: "out-in" },
+    layoutTransition: { name: "layout", mode: "out-in" },
   },
-  css: ['~/assets/css/style.css'],
+  css: ["~/assets/css/style.css"],
   vite: {
     resolve: {
       alias: {
-        '.prisma/client/index-browser': './node_modules/.prisma/client/index-browser.js',
+        ".prisma/client/index-browser":
+          "./node_modules/.prisma/client/index-browser.js",
       },
     },
   },
 
   runtimeConfig: {
-    jwt_secret: process.env.JWT_SECRET
+    jwt_secret: process.env.JWT_SECRET,
+    flw_secret: process.env.FLW_SECRET_KEY,
   },
 
   quasar: {

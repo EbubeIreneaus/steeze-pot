@@ -10,7 +10,7 @@
             </p>
           </div>
 
-          <q-form>
+          <q-form @submit="PlaceBooking">
             <q-select
               v-model="form.type"
               :options="['Birthday', 'Home Service', 'House Party', 'Others']"
@@ -113,21 +113,29 @@
               />
             </div>
             <q-input
-                v-model="form.address"
-                type="text"
-                multiple
-                filled
-                borderless
-                label="Address"
-                aria-placeholder="Address"
-                dense
-                class="mb-4"
-              />
+              v-model="form.address"
+              type="text"
+              multiple
+              filled
+              borderless
+              label="Address"
+              aria-placeholder="Address"
+              dense
+              class="mb-4"
+            />
 
-              <div>
-                <p class="text-caption my-2">On submit, you give us consent to contant you regarding this appointment.</p>
-                <q-btn class="btn btn-primary px-10" label="submit"  />
-              </div>
+            <div>
+              <p class="text-caption my-2">
+                On submit, you give us consent to contant you regarding this
+                appointment.
+              </p>
+              <q-btn
+                class="btn btn-primary px-10"
+                label="submit"
+                type="submit"
+                :loading="isLoading"
+              />
+            </div>
           </q-form>
         </div>
       </div>
@@ -137,6 +145,11 @@
 
 <script setup lang="ts">
 import { CountriesList } from "~/lib/country";
+import Swal from 'sweetalert2'
+import { NotifyError } from "~/lib/notify";
+const isLoading = ref(false);
+
+
 const form = reactive({
   type: "",
   fullname: "",
@@ -147,7 +160,7 @@ const form = reactive({
   address: "",
   date: "",
   time: "",
-  bustop: ''
+  bustop: "",
 });
 
 const countries = CountriesList.map((c) => c.name);
@@ -161,6 +174,39 @@ watch(
     areas.value = country?.lgas as [];
   }
 );
+
+async function PlaceBooking() {
+  isLoading.value = true;
+  try {
+    const res = await $fetch<any>("/api/main/appointment/new", {
+      method: "POST",
+      body: form,
+    });
+
+    if(res.statusCode === 201){
+       const {isConfirmed} = await Swal.fire({
+            icon: 'success',
+            title: 'Appointment Booking',
+            text: 'we have recieve your appointment, our team will get in touch with you as soon as possible.',
+            confirmButtonText: 'okay 🤝',
+            
+        })
+        
+        if (isConfirmed) {
+         return location.reload()
+        }
+
+        return
+    }
+
+    return NotifyError(res.data, 'top-right')
+
+  } catch (error: any) {
+    return NotifyError(error.statusMessage, 'top-right')
+  } finally {
+    isLoading.value = false
+  }
+}
 </script>
 
 <style scoped></style>

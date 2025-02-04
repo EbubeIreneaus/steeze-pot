@@ -56,7 +56,7 @@
                   <div>
                     <label
                       for="Bustop"
-                      class="mb-2 block text-sm font-medium text-gray-900 "
+                      class="mb-2 block text-sm font-medium text-gray-900"
                     >
                       Bustop / Junction*
                     </label>
@@ -92,7 +92,7 @@
                       for="address1"
                       class="mb-2 block text-sm font-medium text-gray-900"
                     >
-                      Home Address 
+                      Home Address
                     </label>
                     <input
                       type="text"
@@ -103,7 +103,6 @@
                       v-model="address.address"
                     />
                   </div>
-
                 </div>
               </div>
 
@@ -244,10 +243,26 @@
 
 <script setup lang="ts">
 const { CartItems, CartTotalPrice } = useCartStore();
+let { user, routeTo } = useAppStore();
 const delivery_price = 2500;
 const tax = 150;
 const sumAmount = computed(() => delivery_price + tax + CartTotalPrice);
 const isLoading = ref(false);
+const router = useRouter();
+const token = useCookie("token").value;
+
+
+if (!user) {
+  routeTo = "/checkout";
+  router.push("/auth/login");
+}
+
+const { data: addresses } = await useFetch("/api/main/checkout/address", {
+  method: "GET",
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
 
 const states = [
   {
@@ -1375,7 +1390,44 @@ watch(
   }
 );
 
-function checkout() {}
+const cartProducts = CartItems.map((item) => {
+  return {
+    product_id: item.id,
+    quantity: item.quantity,
+  };
+});
+
+async function checkout() {
+  const data = {
+    order: cartProducts,
+    addressType: 'new',
+    address: address,
+  }
+  isLoading.value = true
+
+  try{
+    const res = await $fetch<any>('/api/main/checkout', {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+
+    if (res.statusCode === 201) {
+      localStorage.removeItem('cart')
+      return location.href = res.payLink
+    }
+  }catch {
+
+  } finally {
+    isLoading.value = false
+  }
+}
+
+onMounted(() => {
+  console.log(cartProducts);
+});
 </script>
 
 <style scoped></style>

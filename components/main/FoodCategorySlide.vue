@@ -8,12 +8,12 @@
           <figure class="w-fit">
             <nuxt-img
               :src="`/img/category/${cat.src}`"
-              width="90"
-              height="90"
+              width="80"
+              height="80"
               format="webp"
               fit="cover"
               densties="x1"
-              class="rounded-full w-[90px] h-[80px]"
+              class="rounded-full w-[50px] h-[50px] md:w-[70px] md:h-[70px] mask-heart"
             />
             <figcaption class="text-caption font-semibold text-center">
               {{ cat.title }}
@@ -48,24 +48,24 @@ const categories = [
 
 const breakpoints = {
   360: {
-    slidesPerView: 4,
-  },
-
-  640: {
     slidesPerView: 5,
   },
 
-  720: {
+  640: {
     slidesPerView: 6,
   },
-  992: {
+
+  720: {
     slidesPerView: 7,
   },
-  1020: {
+  992: {
     slidesPerView: 8,
   },
+  1020: {
+    slidesPerView: 9,
+  },
   1200: {
-    slidesPerView: 10,
+    slidesPerView: 11,
   },
 };
 

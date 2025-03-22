@@ -1,6 +1,6 @@
 import z from "zod";
 import jwt from "jsonwebtoken";
-import { PrismaClient } from "@prisma/client";
+import prisma from "~/lib/prisma";
 
 const singleSchema = z.object({
   name: z.coerce.string(),
@@ -11,7 +11,6 @@ const singleSchema = z.object({
 const schema = z.array(singleSchema);
 
 export default defineEventHandler(async (event) => {
-  const prisma = new PrismaClient();
   const config = useRuntimeConfig();
   try {
     const body = await readValidatedBody(event, schema.safeParse);

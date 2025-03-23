@@ -28,4 +28,3 @@ prisma/dev.db
 # Local Netlify folder
 .netlify
 
-public/img/products

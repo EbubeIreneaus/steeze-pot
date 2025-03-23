@@ -10,7 +10,12 @@ export default defineNuxtConfig({
     "pinia-plugin-persistedstate/nuxt",
     "@nuxt/image",
     "@prisma/nuxt",
+    "@nuxtjs/sitemap",
   ],
+  site:{
+    url: "https://steezepot.com.ng",
+    name: 'Steeze Pot'
+  },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: "layout", mode: "out-in" },
@@ -42,6 +47,12 @@ export default defineNuxtConfig({
     cloudinary_secret: process.env.CLOUDINARY_SECRET,
   },
 
+  routeRules:{
+    '/8/**': { headers: { 'X-Robots-Tag': 'noindex, nofollow' } },
+  },
+  sitemap: {
+    exclude: ['/8/**', '/checkout/**']
+  },
   quasar: {
     plugins: ["Dialog", "Notify"],
     iconSet: "fontawesome-v6",

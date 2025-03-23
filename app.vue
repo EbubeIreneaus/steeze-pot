@@ -1,7 +1,21 @@
 <script lang="ts" setup>
 onMounted(() => {
-  const loader = document.getElementById('loader');
-  loader?.classList.add('fade-out');
+  const loader = document.getElementById("loader");
+  loader?.classList.add("fade-out");
+});
+
+useSeoMeta({
+  description:
+    "Steeze Pot offers premium food delivery and catering services in Nigeria. Order from a wide variety of freshly prepared meals, from starters to grills, desserts, and more. Book appointments for events or enjoy free delivery on orders above ₦40,000. Experience delicious meals made with passion and top-quality ingredients",
+  title: "Steeze Pot | Premium Food Delivery & Catering Services in Nigeria",
+  ogTitle: "Steeze Pot | Premium Food Delivery & Catering Services in Nigeria",
+  ogDescription:
+    "Steeze Pot offers premium food delivery and catering services in Nigeria. Order from a wide variety of freshly prepared meals, from starters to grills, desserts, and more. Book appointments for events or enjoy free delivery on orders above ₦40,000. Experience delicious meals made with passion and top-quality ingredients",
+  ogImage: "https://steeze-pot.vercel.app/img/ogimage.jpg",
+  ogUrl: "https://steeze-pot.com.ng",
+  ogType: "website",
+  ogSiteName: "Steeze Pot",
+  ogLocale: "en_NG",
 });
 </script>
 
@@ -12,8 +26,8 @@ onMounted(() => {
   </NuxtLayout>
 
   <div class="loader" id="loader">
-  <div class="spinner"></div>
-</div>
+    <div class="spinner"></div>
+  </div>
 </template>
 
 <style scoped>
@@ -24,7 +38,7 @@ onMounted(() => {
   top: 0;
   left: 0;
   z-index: 99999;
-  background-color: #292D36; /* Dark background */
+  background-color: #292d36; /* Dark background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,16 +47,20 @@ onMounted(() => {
 .spinner {
   width: 80px;
   height: 80px;
-  border: 8px solid #FFFFD6; /* Darker border for contrast */
-  border-top: 8px solid #292D36; /* Accent color */
+  border: 8px solid #ffffd6; /* Darker border for contrast */
+  border-top: 8px solid #292d36; /* Accent color */
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
 
 /* Spinner Animation */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Optional Fade-Out Effect */
@@ -52,14 +70,19 @@ onMounted(() => {
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.page-enter-active, .page-leave-active, .layout-enter-active, .layout-leave-active {
+.page-enter-active,
+.page-leave-active,
+.layout-enter-active,
+.layout-leave-active {
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
-.page-enter-from, .layout-enter-from {
+.page-enter-from,
+.layout-enter-from {
   transform: translateX(100%);
   opacity: 0;
 }
-.page-leave-to, .layout-leave-to {
+.page-leave-to,
+.layout-leave-to {
   transform: translateX(-100%);
   opacity: 0;
 }

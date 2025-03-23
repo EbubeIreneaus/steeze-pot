@@ -16,7 +16,12 @@ export default defineNuxtConfig({
     layoutTransition: { name: "layout", mode: "out-in" },
 
     head: {
-      title: "Steeze Pot"
+      title: "Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria",
+      link: [{
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/favicon.ico",
+      }]
     }
   },
   css: ["~/assets/css/style.css"],

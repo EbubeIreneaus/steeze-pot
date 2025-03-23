@@ -14,6 +14,10 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: "layout", mode: "out-in" },
+
+    head: {
+      title: "Steeze Pot"
+    }
   },
   css: ["~/assets/css/style.css"],
   vite: {
@@ -28,6 +32,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     jwt_secret: process.env.JWT_SECRET,
     flw_secret: process.env.FLW_SECRET_KEY,
+    cloudinary_name: process.env.CLOUDINARY_NAME,
+    cloudinary_key: process.env.CLOUDINARY_KEY,
+    cloudinary_secret: process.env.CLOUDINARY_SECRET,
   },
 
   quasar: {

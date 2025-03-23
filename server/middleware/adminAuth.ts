@@ -3,7 +3,6 @@ import jwt from "jsonwebtoken";
 export default defineEventHandler((event) => {
   const config = useRuntimeConfig();
   const path = event.path;
-  console.log("path", path);
   if (path.startsWith("/api/admin")) {
     if (path.endsWith("/login")) {
       return;

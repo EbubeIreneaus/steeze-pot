@@ -6,7 +6,7 @@
         </div>
     </header>
       <slot></slot>
-      <footer class="flex justify-between items-center py-3 px-10 bg-gradient-to-tr from-slate-400 to to-primary uppercase">
+      <footer class="flex justify-between items-center py-3 sm:px-10 px-3 bg-gradient-to-tr from-slate-400 to to-primary uppercase">
         <span>&copy; {{ new Date().getFullYear() }} Steeze-Pot</span>
         <span>Developed By <a href="https://ebustech.vercel.app" target="_blank" rel="noopener noreferrer" class="font-semibold">Ebustech</a></span>
       </footer>

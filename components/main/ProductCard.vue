@@ -6,7 +6,7 @@
           <nuxt-img
             :src="
               Product.image
-                ? `/img/products/${Product.image}`
+                ? Product.image
                 : '/img/products/placeholder.png'
             "
             :alt="Product.imageAlt || Product.name"

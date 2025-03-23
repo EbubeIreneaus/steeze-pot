@@ -91,6 +91,10 @@ export default defineEventHandler(async (event) => {
         },
       });
 
+      // Loop through order product
+      // find each order-product name and price from products 
+      // Orders now array of bought product {name, price, and quantity}
+      // purpose to save ordered products as raw text since product info (e.g price) can change so it won't affect already bought products info
       const Orders = order.map((order) => {
         const product = products.find((pr) => pr.id == order.product_id);
         return { ...product, quantity: order.quantity };

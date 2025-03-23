@@ -1,13 +1,26 @@
 import fs from "fs";
 import path from "path";
-import { PrismaClient } from "@prisma/client";
+import prisma from "~/lib/prisma";
+import { v2 as cloudinary } from "cloudinary";
+import { promisify } from "util";
+import streamifier from "streamifier";
 
 export default defineEventHandler(async (event) => {
   try {
+    const config = useRuntimeConfig()
+
+    cloudinary.config({
+      cloud_name: config.cloudinary_name,
+      api_key: config.cloudinary_key,
+      api_secret: config.cloudinary_secret,
+    });
+    const uploadStream = promisify(cloudinary.uploader.upload_stream).bind(
+      cloudinary.uploader
+    );
+
     const body = (await readMultipartFormData(event)) as [];
     const upload_dir = path.join(process.cwd(), "public", "img", "products");
     let imageName = new Date().getTime() as unknown as string;
-    const prisma = new PrismaClient();
     let productId;
     let image;
     let alt;
@@ -25,10 +38,21 @@ export default defineEventHandler(async (event) => {
             message: "image format not supported",
           });
         }
-        imageName += "-" + filename + "." + type.split("/")[1];
+        // imageName += "-" + filename + "." + type.split("/")[1];
+        // fs.writeFileSync(path.join(upload_dir, imageName), data);
 
-        fs.writeFileSync(path.join(upload_dir, imageName), data);
-        image = imageName;
+        const result = await new Promise<any>((resolve, reject) => {
+          const upload = cloudinary.uploader.upload_stream(
+            { folder: "steeze-pot", resource_type: "image" },
+            (error, result) => {
+              if (error) return reject(error);
+              resolve(result);
+            }
+          );
+          streamifier.createReadStream(data).pipe(upload);
+        });
+       
+        image = result.secure_url;
         continue;
       }
 
@@ -43,7 +67,7 @@ export default defineEventHandler(async (event) => {
 
       if (name == "alt") {
         if (data && Buffer.isBuffer(data)) {
-           alt = data.toString("utf-8");
+          alt = data.toString("utf-8");
         } else {
           alt = data;
         }
@@ -56,12 +80,15 @@ export default defineEventHandler(async (event) => {
       },
       data: {
         image: image,
-        imageAlt: alt
+        imageAlt: alt,
       },
     });
 
-    return {statusCode: 201, data: {productId: res.id, filename: res.image}}
+    return {
+      statusCode: 201,
+      data: { productId: res.id, filename: res.image },
+    };
   } catch (error: any) {
-    return createError(error.message)
+    return createError(error.message);
   }
 });

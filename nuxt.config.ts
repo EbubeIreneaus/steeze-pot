@@ -12,22 +12,33 @@ export default defineNuxtConfig({
     "@prisma/nuxt",
     "@nuxtjs/sitemap",
   ],
-  site:{
+  site: {
     url: "https://steezepot.com.ng",
-    name: 'Steeze Pot'
+    name: "Steeze Pot",
   },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: "layout", mode: "out-in" },
 
     head: {
-      title: "Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria",
-      link: [{
-        rel: "icon",
-        type: "image/x-icon",
-        href: "/favicon.ico",
-      }]
-    }
+      htmlAttrs: {
+        lang: "en",
+      },
+      title:
+        "Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria",
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon.png",
+        },
+      ],
+    },
   },
   css: ["~/assets/css/style.css"],
   vite: {
@@ -47,11 +58,11 @@ export default defineNuxtConfig({
     cloudinary_secret: process.env.CLOUDINARY_SECRET,
   },
 
-  routeRules:{
-    '/8/**': { headers: { 'X-Robots-Tag': 'noindex, nofollow' } },
+  routeRules: {
+    "/8/**": { headers: { "X-Robots-Tag": "noindex, nofollow" } },
   },
   sitemap: {
-    exclude: ['/8/**', '/checkout/**']
+    exclude: ["/8/**", "/checkout/**"],
   },
   quasar: {
     plugins: ["Dialog", "Notify"],

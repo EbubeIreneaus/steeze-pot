@@ -108,10 +108,6 @@ useSeoMeta({
   ogTitle: "About Steeze Pot - Elevating Nigerian Culinary Experiences",
   ogDescription:
     " Learn about Steeze Pot, a premium food delivery and catering brand offering authentic Nigerian and continental dishes. Discover our story, mission, and commitment to delivering exceptional flavors and memorable dining moments.",
-  ogImage: "https://steeze-pot.vercel.app/img/ogimage.jpg",
   ogUrl: "https://steeze-pot.com.ng/about",
-  ogType: "website",
-  ogSiteName: "Steeze Pot",
-  ogLocale: "en_NG",
 });
 </script>

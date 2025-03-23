@@ -222,6 +222,20 @@
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useSeoMeta({
+  description:
+    "Reach out to Steeze Pot for inquiries, orders, or customer support. Call, email, or send a message — we're available 24/7 to meet your food and catering needs.",
+  title: "Contact Steeze Pot - We're Here to Serve You",
+  ogTitle: "Contact Steeze Pot - We're Here to Serve You",
+  ogDescription:
+    "Reach out to Steeze Pot for inquiries, orders, or customer support. Call, email, or send a message — we're available 24/7 to meet your food and catering needs.",
+  ogImage: "https://steeze-pot.vercel.app/img/ogimage.jpg",
+  ogUrl: "https://steeze-pot.com.ng/contact",
+  ogType: "website",
+  ogSiteName: "Steeze Pot",
+  ogLocale: "en_NG",
+});
+</script>
 
 <style scoped></style>

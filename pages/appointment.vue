@@ -149,6 +149,21 @@ import Swal from 'sweetalert2'
 import { NotifyError } from "~/lib/notify";
 const isLoading = ref(false);
 
+useSeoMeta({
+  description:
+    "Schedule catering services or book a private chef for your next event. Steeze Pot provides tailored food services for weddings, parties, corporate events, and more.",
+  title: "Book Catering or Private Chef | Steeze Pot",
+  ogTitle: "Book Catering or Private Chef | Steeze Pot",
+  ogDescription:
+    "Schedule catering services or book a private chef for your next event. Steeze Pot provides tailored food services for weddings, parties, corporate events, and more.",
+  ogImage: "https://steeze-pot.vercel.app/img/ogimage.jpg",
+  ogUrl: "https://steeze-pot.com.ng/appointment",
+  ogType: "website",
+  ogSiteName: "Steeze Pot",
+  ogLocale: "en_NG",
+
+});
+
 
 const form = reactive({
   type: "",

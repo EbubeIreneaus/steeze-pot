@@ -7,8 +7,8 @@
     </h2>
     <div class="">
       <div>
-        <div class="flex flex-col md:flex-row md:justify-evenly gap-5">
-          <figure class="max-w-[180px]">
+        <div class="flex flex-col md:flex-row md:justify-evenly gap-x-5 gap-y-10">
+          <figure class="max-w-[180px] mx-auto">
             <nuxt-img
               src="/img/team/mildred.jpg"
               alt="About Us"
@@ -25,7 +25,7 @@
             </figcaption>
           </figure>
 
-          <figure class="max-w-[180px]">
+          <figure class="max-w-[180px] mx-auto">
             <nuxt-img
               src="/img/team/mildred.jpg"
               alt="About Us"
@@ -42,7 +42,7 @@
             </figcaption>
           </figure>
 
-          <figure class="max-w-[180px]">
+          <figure class="max-w-[180px] mx-auto">
             <nuxt-img
               src="/img/team/ebube.jpg"
               alt="About Us"

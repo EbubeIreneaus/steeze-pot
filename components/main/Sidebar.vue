@@ -81,8 +81,19 @@
 
 <script setup lang="ts">
 defineProps<{ menu: any[], open: boolean }>();
+const emit = defineEmits(['close'])
 const Cart = useCartStore()
 const {Favorites} = useFavStore()
+
+onMounted(() => {
+  const a = document.querySelectorAll('a')
+  const aside = document.querySelector('aside')
+  a.forEach((el) => {
+    el.addEventListener('click', () => {
+      emit('close')
+    })
+  })
+})
 </script>
 
 <style scoped>

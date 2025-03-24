@@ -170,7 +170,7 @@
     <MainMiniHeroComponent />
   </header>
 
-  <MainSidebar :menu="MenuLinks" :open="openAside" />
+  <MainSidebar :menu="MenuLinks" :open="openAside" @close="() => openAside = false" />
 </template>
 
 <script setup lang="ts">

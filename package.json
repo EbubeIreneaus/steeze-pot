@@ -20,6 +20,7 @@
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.6.0",
     "daisyui": "^4.12.23",
+    "flutterwave-node-v3": "^1.1.15",
     "jsonwebtoken": "^9.0.2",
     "nuxt": "^3.15.2",
     "nuxt-aos": "^1.2.5",

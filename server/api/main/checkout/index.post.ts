@@ -124,7 +124,7 @@ export default defineEventHandler(async (event) => {
           name: user.user.firstname + " " + user.user.lastname,
           phonenumber: user.user.phone,
         },
-        redirect_url: "http://localhost:3000/checkout/success",
+        redirect_url: "http://localhost:3000/payComplete",
         customizations: {
           title: "Steeze Pot",
         },

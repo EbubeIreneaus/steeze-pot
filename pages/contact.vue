@@ -13,14 +13,12 @@
                 Contact
               </p>
               <h2
-                class="font-heading mb-4 font-bold tracking-tight text-gray-900  text-3xl sm:text-5xl"
+                class="font-heading mb-4 font-bold tracking-tight text-gray-900 text-3xl sm:text-5xl"
               >
                 Get in Touch
               </h2>
-              <p
-                class="mx-auto mt-4 max-w-3xl text-xl text-gray-600"
-              >
-                In hac habitasse platea dictumst
+              <p class="mx-auto mt-4 max-w-3xl text-xl text-gray-600">
+               
               </p>
             </div>
           </div>
@@ -28,9 +26,9 @@
             <div class="grid md:grid-cols-2">
               <div class="h-full pr-6">
                 <p class="mt-3 mb-12 text-lg text-gray-600">
-                  Class aptent taciti sociosqu ad litora torquent per conubia
-                  nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut
-                  scelerisque sagittis ante, ac tincidunt sem venenatis ut.
+                  Reach out to Steeze Pot for inquiries, orders, or customer
+                  support. Call, email, or send a message — we're available 24/7
+                  to meet your food and catering needs.
                 </p>
                 <ul class="mb-6 md:mb-0">
                   <li class="flex">
@@ -94,15 +92,19 @@
                     </div>
                     <div class="ml-4 mb-4">
                       <h3
-                        class="mb-2 text-lg font-medium leading-6 text-gray-900 "
+                        class="mb-2 text-lg font-medium leading-6 text-gray-900"
                       >
                         Contact
                       </h3>
                       <p class="text-gray-600 dark:text-slate-400">
-                        Mobile: <a href="tel:+2348104403050">+234 810 440 3050</a>
+                        Mobile:
+                        <a href="tel:+2348104403050">+234 810 440 3050</a>
                       </p>
                       <p class="text-gray-600 dark:text-slate-400">
-                        Mail: <a href="mailto:service@steeze-pot.com.ng">service@steeze-pot.com.ng</a>
+                        Mail:
+                        <a href="mailto:service@steeze-pot.com.ng"
+                          >service@steeze-pot.com.ng</a
+                        >
                       </p>
                     </div>
                   </li>
@@ -128,7 +130,7 @@
                     </div>
                     <div class="ml-4 mb-4">
                       <h3
-                        class="mb-2 text-lg font-medium leading-6 text-gray-900 "
+                        class="mb-2 text-lg font-medium leading-6 text-gray-900"
                       >
                         Working hours
                       </h3>
@@ -143,9 +145,7 @@
                 </ul>
               </div>
               <div class="card h-fit max-w-6xl p-5 md:p-12" id="form">
-                <h2 class="mb-4 text-2xl font-bold ">
-                  Ready to Get Started?
-                </h2>
+                <h2 class="mb-4 text-2xl font-bold">Ready to Get Started?</h2>
                 <form id="contactForm">
                   <div class="mb-6">
                     <div class="mx-0 mb-1 sm:mb-4">

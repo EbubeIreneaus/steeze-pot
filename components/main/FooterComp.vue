@@ -1,5 +1,5 @@
 <template>
-  <footer class="px-4 divide-y bg-primary text-secondary " >
+  <footer class="px-4 divide-y bg-primary text-secondary">
     <div
       class="container grid lg:grid-cols-3 gap-4 justify-between py-10 mx-auto space-y-8 lg:space-y-0"
     >
@@ -15,15 +15,15 @@
             width="120px"
             densities="x1"
             class="w-32 rounded-full"
-            
             alt="Business Logo"
           />
         </a>
         <div class="my-5 text-body2 text-balance">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, rem
-          quae reiciendis corrupti odit dignissimos! Blanditiis illum debitis
-          delectus, incidunt harum accusantium quae at rerum minima fugiat,
-          praesentium beatae magni.
+          Steeze Pot offers premium food delivery and catering services in
+          Nigeria. Order from a wide variety of freshly prepared meals, from
+          starters to grills, desserts, and more. Book appointments for events
+          or enjoy free delivery on orders above ₦40,000. Experience delicious
+          meals made with passion and top-quality ingredients.
         </div>
       </div>
 
@@ -31,7 +31,7 @@
         class="grid grid-cols-2 text-sm gap-x-3 gap-y-8 sm:grid-cols-4 lg:col-span-2"
       >
         <div class="space-y-3">
-          <h5 class="tracking-wide uppercase ">Product</h5>
+          <h5 class="tracking-wide uppercase">Product</h5>
           <ul class="space-y-1 *:font-semibold">
             <li class="hover:!text-secondary/50">
               <nuxt-link to="/" href="#">Home</nuxt-link>
@@ -130,6 +130,8 @@
     </div>
     <div class="py-6 text-sm text-center font-semibold">
       © {{ new Date().getFullYear() }} STEEZEPOT.COM.NG. All rights reserved.
+      <br />
+      Developed By <a href="https://ebustech.vercel.app" class="underline" target="_blank">Ebustech</a>
     </div>
   </footer>
 </template>

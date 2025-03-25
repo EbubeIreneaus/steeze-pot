@@ -102,8 +102,8 @@
                       </p>
                       <p class="text-gray-600 dark:text-slate-400">
                         Mail:
-                        <a href="mailto:service@steeze-pot.com.ng"
-                          >service@steeze-pot.com.ng</a
+                        <a href="mailto:kitchen@steeze-pot.com.ng"
+                          >kitchen@steeze-pot.com.ng</a
                         >
                       </p>
                     </div>

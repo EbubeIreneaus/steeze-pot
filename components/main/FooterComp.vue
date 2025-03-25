@@ -40,10 +40,7 @@
               <nuxt-link to="/about" href="#">About Us</nuxt-link>
             </li>
             <li class="hover:!text-secondary/50">
-              <nuxt-link to="/service" href="#">Our Service</nuxt-link>
-            </li>
-            <li class="hover:!text-secondary/50">
-              <nuxt-link to="/blog" href="#">Blog</nuxt-link>
+              <nuxt-link to="#" href="#">Blog</nuxt-link>
             </li>
             <li class="hover:!text-secondary/50">
               <nuxt-link to="/appointment" href="#">Book Appointment</nuxt-link>
@@ -53,8 +50,8 @@
         <div class="space-y-3">
           <h5 class="tracking-wide uppercase">Company</h5>
           <ul class="space-y-1 *:font-semibold">
-            <li><a rel="noopener noreferrer" href="#">Privacy</a></li>
-            <li><a rel="noopener noreferrer" href="#">Terms of Service</a></li>
+            <li><nuxt-link to="/privacy-policy" >Privacy and Policy</nuxt-link></li>
+            <li><nuxt-link to="/terms-of-service" >Terms of Service</nuxt-link></li>
           </ul>
         </div>
         <div class="space-y-3">

@@ -5,7 +5,7 @@
         class="flex justify-end md:justify-between items-center max-w-[90%] mx-auto py-3 text-black"
       >
         <div class="hidden md:!flex justify-between gap-5">
-          <div>service@steezepot.com.ng</div>
+          <div>kitchen@steezepot.com.ng</div>
           <q-separator vertical />
           <div class="hidden lg:!inline-block">
             Free Deliveries for all Order of ₦100,000.00

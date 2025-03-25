@@ -75,11 +75,11 @@
                 <div class="mb-6 mt-3 text-center">
                   <p class="text-sm text-left text-gray-600">
                     By signing up, you agree to our
-                    <nuxt-link to="/" class="font-semibold text-primary"
-                      >terms of use</nuxt-link
+                    <nuxt-link to="/terms-of-service" class="font-semibold text-primary"
+                      >terms of service</nuxt-link
                     >
                     and
-                    <nuxt-link to="/" class="font-semibold text-primary"
+                    <nuxt-link to="/privacy-policy" class="font-semibold text-primary"
                       >privacy policies</nuxt-link
                     >
                   </p>

@@ -124,7 +124,7 @@ export default defineEventHandler(async (event) => {
           name: user.user.firstname + " " + user.user.lastname,
           phonenumber: user.user.phone,
         },
-        redirect_url: "http://localhost:3000/payComplete",
+        redirect_url: "http://steeze-pot.netlify.app/payComplete",
         customizations: {
           title: "Steeze Pot",
         },

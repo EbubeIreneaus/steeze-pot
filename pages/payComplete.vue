@@ -43,13 +43,13 @@ async function verify() {
     if (data.statusCode === 200) {
       NotifySuccess("Payment Confirmed", "top-right");
       setTimeout(() => {
-        router.push("/");
+        router.push("/myOrders");
       }, 3000);
     }
   } catch (error) {
     NotifyError("Payment Unsucessful", "top-right");
     setTimeout(() => {
-        router.push("/");
+        router.push("/myOrders");
       }, 3000);
   }
 }

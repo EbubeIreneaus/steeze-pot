@@ -74,7 +74,7 @@
         <div><q-icon name="phone" />&nbsp; +234 810 440 3050</div>
       </div>
 
-      <div>Free shipping for goods above <span v-naira="40000"></span></div>
+      <div>Free delivery for all orders above <span v-naira="100000"></span></div>
     </div>
   </aside>
 </template>

@@ -22,7 +22,7 @@
           Steeze Pot offers premium food delivery and catering services in
           Nigeria. Order from a wide variety of freshly prepared meals, from
           starters to grills, desserts, and more. Book appointments for events
-          or enjoy free delivery on orders above ₦40,000. Experience delicious
+          or enjoy free delivery on orders above ₦100,000.00 Experience delicious
           meals made with passion and top-quality ingredients.
         </div>
       </div>

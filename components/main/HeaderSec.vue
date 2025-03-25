@@ -8,7 +8,7 @@
           <div>service@steezepot.com.ng</div>
           <q-separator vertical />
           <div class="hidden lg:!inline-block">
-            Free Deliveries for all Order of ₦40,000.00
+            Free Deliveries for all Order of ₦100,000.00
           </div>
         </div>
 
@@ -45,9 +45,9 @@
               no-caps
             >
               <q-list>
-                <q-item to="/">
+                <!-- <q-item to="">
                   <q-item-section>Settings</q-item-section>
-                </q-item>
+                </q-item> -->
                 <q-item to="/favorite">
                   <q-item-section>Favourites</q-item-section>
                 </q-item>
@@ -180,7 +180,7 @@ const MenuLinks = [
   { title: 'HOME', href: '/', icon: '', sublink: [] },
   { title: 'ABOUT US', href: '/about', icon: '', sublink: [] },
   // { title: 'OUR SERVICE', href: '/about', icon: '', sublink: [] },
-  { title: 'BLOG', href: '/blog', icon: '', sublink: [] },
+  { title: 'BLOG', href: '#', icon: '', sublink: [] },
   { title: 'BOOK APPOINTMENT', href: '/appointment', icon: '', sublink: [] },
   { title: 'CONTACT', href: '/contact', icon: '', sublink: [] },
 ];

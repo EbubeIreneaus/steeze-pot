@@ -12,7 +12,7 @@ useSeoMeta({
   ogTitle:
     "Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria",
   ogDescription:
-    "Steeze Pot offers premium food delivery and catering services in Nigeria. Order from a wide variety of freshly prepared meals, from starters to grills, desserts, and more. Book appointments for events or enjoy free delivery on orders above ₦40,000. Experience delicious meals made with passion and top-quality ingredients",
+    "Steeze Pot offers premium food delivery and catering services in Nigeria. Order from a wide variety of freshly prepared meals, from starters to grills, desserts, and more. Book appointments for events or enjoy free delivery on orders above ₦100,000.00. Experience delicious meals made with passion and top-quality ingredients",
   ogImage: "https://steeze-pot.netlify.app/img/ogimage.png",
   ogUrl: "https://steeze-pot.com.ng",
   ogType: "website",
@@ -21,7 +21,7 @@ useSeoMeta({
   twitterTitle:
     "Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria",
   twitterDescription:
-    "Steeze Pot offers premium food delivery and catering services in Nigeria. Order from a wide variety of freshly prepared meals, from starters to grills, desserts, and more. Book appointments for events or enjoy free delivery on orders above ₦40,000. Experience delicious meals made with passion and top-quality ingredients",
+    "Steeze Pot offers premium food delivery and catering services in Nigeria. Order from a wide variety of freshly prepared meals, from starters to grills, desserts, and more. Book appointments for events or enjoy free delivery on orders above ₦100,000.00. Experience delicious meals made with passion and top-quality ingredients",
   twitterImage: "https://steeze-pot.netlify.app/img/ogimage.png",
   twitterCard: "summary_large_image",
 });

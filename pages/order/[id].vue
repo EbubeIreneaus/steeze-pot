@@ -7,7 +7,7 @@
         Order ID: {{ order.id }}
       </h2>
       <p class="text-gray-600">
-        Total Amount:
+         Amount:
         <span class="font-semibold" v-naira="order.totalAmount"></span>
       </p>
       <p class="text-gray-600">
@@ -62,7 +62,7 @@
       </p>
 
       <div class="flex gap-3 mt-6">
-        <button class="btn btn-success flex-1" :disabled="order.paid && order.delivered">Mark as Delivered</button>
+        <button class="btn btn-success flex-1" :disabled="(order.paid && order.delivered)||(!order.paid)">Mark as Delivered</button>
         <button class="btn btn-info flex-1" v-if="!order.paid">Make Payment</button>
         <button class="btn btn-error flex-1" :disabled="order.paid && order.delivered">Cancel Order</button>
       </div>

@@ -12,14 +12,21 @@
       </p>
       <p class="text-gray-600">
         Paid:
-        <span class="text-green-500 font-semibold">{{
+        <span class="font-semibold" :class="order.paid?'text-green-500':'text-red-500'">{{
           order.paid ? "Yes" : "No"
         }}</span>
       </p>
       <p class="text-gray-600">
         Delivered:
-        <span class="text-red-500 font-semibold">{{
+        <span class=" font-semibold" :class="order.delivered?'text-green-500':'text-red-500'">{{
           order.delivered ? "Yes" : "No"
+        }}</span>
+      </p>
+
+      <p class="text-gray-600">
+        Date:
+        <span class=" font-semibold" >{{
+          date.formatDate(order.createdAt, "MMMM DD, YYYY")
         }}</span>
       </p>
 
@@ -65,6 +72,7 @@
 </template>
 
 <script setup lang="ts">
+import {date} from 'quasar'
 const route = useRoute();
 const orderID = route.params.id;
 

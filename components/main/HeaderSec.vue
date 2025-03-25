@@ -29,10 +29,10 @@
           </ul>
           <!-- <q-separator vertical /> -->
           <div v-if="!user">
-            <router-link to="/auth/login">
+            <nuxt-link to="/auth/login">
               <q-icon name="account_circle" /> &nbsp;
               <span>Login</span>
-            </router-link>
+            </nuxt-link>
           </div>
           <div v-else>
             <q-btn-dropdown

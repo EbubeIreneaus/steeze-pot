@@ -7,8 +7,10 @@ onMounted(() => {
 useSeoMeta({
   description:
     "Steeze Pot offers premium food delivery and catering services in Nigeria. Order from a wide variety of freshly prepared meals, from starters to grills, desserts, and more. Book appointments for events or enjoy free delivery on orders above ₦40,000. Experience delicious meals made with passion and top-quality ingredients",
-  title: "Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria",
-  ogTitle: "Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria",
+  title:
+    "Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria",
+  ogTitle:
+    "Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria",
   ogDescription:
     "Steeze Pot offers premium food delivery and catering services in Nigeria. Order from a wide variety of freshly prepared meals, from starters to grills, desserts, and more. Book appointments for events or enjoy free delivery on orders above ₦40,000. Experience delicious meals made with passion and top-quality ingredients",
   ogImage: "https://steeze-pot.netlify.app/img/ogimage.png",
@@ -16,21 +18,25 @@ useSeoMeta({
   ogType: "website",
   ogSiteName: "Steeze Pot",
   ogLocale: "en-NG",
-  twitterTitle: 'Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria',
-  twitterDescription: 'Steeze Pot offers premium food delivery and catering services in Nigeria. Order from a wide variety of freshly prepared meals, from starters to grills, desserts, and more. Book appointments for events or enjoy free delivery on orders above ₦40,000. Experience delicious meals made with passion and top-quality ingredients',
-  twitterImage: 'https://steeze-pot.netlify.app/img/ogimage.png',
-  twitterCard: 'summary_large_image'
+  twitterTitle:
+    "Steeze Pot | Gourmet Meals, Catering & Online Food Delivery in Nigeria",
+  twitterDescription:
+    "Steeze Pot offers premium food delivery and catering services in Nigeria. Order from a wide variety of freshly prepared meals, from starters to grills, desserts, and more. Book appointments for events or enjoy free delivery on orders above ₦40,000. Experience delicious meals made with passion and top-quality ingredients",
+  twitterImage: "https://steeze-pot.netlify.app/img/ogimage.png",
+  twitterCard: "summary_large_image",
 });
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtLoadingIndicator />
-    <NuxtPage />
-  </NuxtLayout>
+  <div>
+    <NuxtLayout>
+      <NuxtLoadingIndicator />
+      <NuxtPage />
+    </NuxtLayout>
 
-  <div class="loader" id="loader">
-    <div class="spinner"></div>
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+    </div>
   </div>
 </template>
 

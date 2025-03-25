@@ -5,7 +5,6 @@ import jwt from "jsonwebtoken";
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
   const userId = getQuery(event).userId as string
-    console.log(userId)
   try {
  
 

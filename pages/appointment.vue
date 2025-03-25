@@ -126,7 +126,7 @@
 
             <div>
               <p class="text-caption my-2">
-                On submit, you give us consent to contant you regarding this
+                On submitting, you give us consent to contact you regarding this
                 appointment.
               </p>
               <q-btn

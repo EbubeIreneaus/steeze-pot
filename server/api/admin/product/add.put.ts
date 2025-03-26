@@ -7,6 +7,7 @@ const singleSchema = z.object({
   price: z.coerce.number(),
   category: z.string().toLowerCase().trim(),
   desc: z.coerce.string(),
+  available: z.boolean().default(false)
 });
 const schema = z.array(singleSchema);
 

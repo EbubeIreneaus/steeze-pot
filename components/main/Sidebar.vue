@@ -69,7 +69,7 @@
 
       <div class="px-3 font-medium text-gray-500/ mb-4">
         <div class="mb-3">
-          <q-icon name="mail" />&nbsp; service@steeze-pot.com.ng
+          <q-icon name="mail" />&nbsp; kitchen@steeze-pot.com.ng
         </div>
         <div><q-icon name="phone" />&nbsp; +234 810 440 3050</div>
       </div>

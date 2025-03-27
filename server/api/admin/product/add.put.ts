@@ -33,6 +33,7 @@ export default defineEventHandler(async (event) => {
 
     return { statusCode: 201, data: products };
   } catch (error: any) {
+    console.log(error.message)
     return createError(error.message);
   }
 });

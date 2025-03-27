@@ -9,9 +9,18 @@ export default defineEventHandler(async event => {
                }
             },
 
-            omit: {
-                psw: true
-            }
+            select: {
+                id: true,
+                firstname: true,
+                lastname: true,
+                email: true,
+                phone: true,
+                createdAt: true,
+                admin: true,
+                _count: {
+                  select: { order: true }
+                }
+              }
         })
 
         const me = await prisma.user.findUnique({
@@ -19,9 +28,18 @@ export default defineEventHandler(async event => {
                 id: event.context.user.userId 
             },
 
-            omit: {
-                psw: true
-            }
+            select: {
+                id: true,
+                firstname: true,
+                lastname: true,
+                email: true,
+                phone: true,
+                createdAt: true,
+                admin: true,
+                _count: {
+                  select: { order: {where: {paid: true}} }
+                }
+              }
         })
         return {statusCode: 200, data: user, me: me}
     } catch (error:any) {

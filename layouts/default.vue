@@ -1,7 +1,9 @@
 <template>
   <div>
     <MainHeaderSec />
-    <slot></slot>
+    <div>
+      <slot />
+    </div>
     <MainFooterComp />
   </div>
 </template>
